@@ -1,256 +1,935 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Balaji</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <style>
-    body {
-      background-color: #ffffff;
-      font-family: Arial, sans-serif;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
-    /* ---------- TOP BAR ---------- */
-    .top-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 15px;
-      background-color: #ffffff;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    }
-    .top-bar .menu-icon {
-      font-size: 24px;
-      color: #25d366;
-      cursor: default;
-    }
-    .top-bar .center-logo {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .top-bar .center-logo img {
-      width: 30px;
-      height: 30px;
-    }
-    .top-bar .center-logo span {
-      font-size: 20px;
-      font-weight: 500;
-      color: #25d366;
-    }
-    .top-bar .download-icon {
-      font-size: 22px;
-      color: #25d366;
-      cursor: default;
-    }
+<title>MPL Home — Trusted Home Maintenance & Repair Services (Flat 5% OFF)</title>
+<meta name="description" content="Professional home repair, AC maintenance, deep cleaning, electrical, plumbing, and painting services at your doorstep with MPL Home. Flat 5% Welcome Offer on WhatsApp.">
+<meta name="robots" content="index, follow">
 
-    /* ---------- PROFILE SECTION ---------- */
-    .profile-section {
-      text-align: center;
-      padding: 40px 20px 5px;
-    }
-    .profile-logo {
-  background: url("image.png") no-repeat center center;
-  background-size: cover;
-  width: 110px;        /* Slightly larger for clarity */
-  height: 110px;
-  border-radius: 50%;
-  border: 3px solid #25d366; /* Optional - gives a WhatsApp style border */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto 10px;
-  overflow: hidden;     /* Ensures image fits inside circle */
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+:root {
+  --bg-core: #070d17;
+  --bg-surface: #0e1726;
+  --bg-card: #131f33;
+  --bg-card-hover: #192a45;
+  --primary-accent: #00d284;
+  --secondary-accent: #00b4d8;
+  --offer-gold: #ffc107;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-line: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(0, 210, 132, 0.35);
+  --grad-accent: linear-gradient(135deg, #00d284 0%, #00b4d8 100%);
+  --grad-offer: linear-gradient(135deg, #ffb703 0%, #fb8500 100%);
+  --grad-surface: linear-gradient(180deg, rgba(19, 31, 51, 0.8) 0%, rgba(14, 23, 38, 0.95) 100%);
 }
 
-/* For mobile responsiveness */
-@media (max-width: 576px) {
-  .profile-logo {
-    width: 90px;
-    height: 90px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: var(--bg-core);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+h1, h2, h3, h4, .brand-logo {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  letter-spacing: -0.5px;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 14px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(7, 13, 23, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-line);
+}
+
+.brand-logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-badge {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--grad-accent);
+  color: #070d17;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.brand-logo span {
+  color: var(--primary-accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-accent);
+}
+
+.nav-action-btn {
+  background: var(--grad-offer);
+  color: #070d17;
+  font-weight: 800;
+  font-size: 12.5px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(251, 133, 0, 0.3);
+  white-space: nowrap;
+}
+
+/* TOP WELCOME OFFER STRIP */
+.offer-top-strip {
+  margin-top: 62px;
+  background: linear-gradient(90deg, rgba(255, 183, 3, 0.12), rgba(0, 210, 132, 0.12));
+  border-bottom: 1px solid rgba(255, 183, 3, 0.25);
+  padding: 8px 4%;
+  text-align: center;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.offer-tag-btn {
+  background: var(--grad-offer);
+  color: #070d17;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* HERO WRAPPER */
+.hero-wrapper {
+  padding: 30px 6% 50px;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(255, 183, 3, 0.12);
+  border: 1px solid rgba(255, 183, 3, 0.4);
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #ffb703;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.hero-content h1 {
+  font-size: clamp(30px, 7vw, 52px);
+  font-weight: 900;
+  line-height: 1.18;
+  margin-bottom: 16px;
+}
+
+.hero-content h1 span {
+  background: var(--grad-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+  color: var(--text-muted);
+  font-size: clamp(14px, 4vw, 16px);
+  line-height: 1.65;
+  margin-bottom: 22px;
+}
+
+.hero-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 26px;
+}
+
+.h-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+.h-item i {
+  color: var(--primary-accent);
+  font-size: 15px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--grad-accent);
+  color: #070d17;
+  font-weight: 800;
+  font-size: 14px;
+  padding: 13px 26px;
+  border-radius: 12px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+.btn-primary:active, .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 210, 132, 0.4);
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-line);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 13px 22px;
+  border-radius: 12px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+/* HERO POSTER CONTAINER */
+.hero-poster-box {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border-glow);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  background: var(--bg-card);
+  position: relative;
+  display: block;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.hero-poster-box img {
+  width: 100%;
+  height: auto;
+  min-height: 220px;
+  max-height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
+/* STATS STRIP */
+.stats-strip {
+  padding: 20px 6%;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-line);
+  border-bottom: 1px solid var(--border-line);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  text-align: center;
+}
+
+.stat-cell {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-line);
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.stat-cell .num {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--primary-accent);
+}
+
+.stat-cell.offer-cell .num {
+  color: #ffb703;
+}
+
+.stat-cell .lbl {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* SECTIONS */
+.section {
+  padding: 60px 6%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.section-head {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.section-head span {
+  color: var(--primary-accent);
+  font-size: 11.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.section-head h2 {
+  font-size: clamp(26px, 6vw, 36px);
+  font-weight: 800;
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+
+.section-head p {
+  color: var(--text-muted);
+  font-size: 14px;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+/* SERVICES GRID */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.service-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-line);
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s ease;
+}
+
+.service-card:hover {
+  border-color: var(--border-glow);
+  background: var(--bg-card-hover);
+}
+
+.srv-icon-box {
+  width: 44px;
+  height: 44px;
+  background: rgba(0, 210, 132, 0.1);
+  color: var(--primary-accent);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.service-card h3 {
+  font-size: 19px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  color: var(--text-muted);
+  font-size: 13.5px;
+  line-height: 1.55;
+  margin-bottom: 16px;
+}
+
+.srv-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.srv-bullets li {
+  font-size: 12.5px;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.srv-bullets li i {
+  color: var(--primary-accent);
+  font-size: 11px;
+}
+
+.srv-cta-link {
+  text-decoration: none;
+  color: #ffb703;
+  font-weight: 800;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* WORKFLOW PROCESS */
+.workflow-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.step-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-line);
+  border-radius: 16px;
+  padding: 22px;
+}
+
+.step-num {
+  font-size: 11.5px;
+  font-weight: 800;
+  color: var(--primary-accent);
+  background: rgba(0, 210, 132, 0.1);
+  padding: 3px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.step-card h4 {
+  font-size: 17px;
+  margin-bottom: 6px;
+}
+
+.step-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* BOTTOM CTA BANNER */
+.cta-banner {
+  background: linear-gradient(135deg, #0e1b30, #132746);
+  border: 1px solid rgba(255, 183, 3, 0.35);
+  border-radius: 22px;
+  padding: 36px 20px;
+  text-align: center;
+  margin: 30px auto 60px;
+}
+
+.cta-banner h2 {
+  font-size: clamp(22px, 5.5vw, 32px);
+  margin-bottom: 10px;
+}
+
+.cta-banner p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin: 0 auto 20px;
+}
+
+/* FOOTER */
+footer {
+  background: #040810;
+  border-top: 1px solid var(--border-line);
+  padding: 45px 6% 25px;
+  color: #fff;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-col h4 {
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.footer-col p {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+
+.footer-contact-item i {
+  color: var(--primary-accent);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 18px;
+  text-align: center;
+  color: #475569;
+  font-size: 12px;
+}
+
+/* FLOATING WHATSAPP BUTTON */
+.floating-wa-btn {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 52px;
+  height: 52px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 26px;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+  z-index: 1000;
+}
+
+/* DESKTOP & TABLET MEDIA QUERIES */
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .workflow-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stats-strip {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
-    .profile-section h5 {
-      margin-top: 10px;
-      font-size: 18px;
-      font-weight: 600;
-    }
-    .chat-btn {
-      background-color: #25d366;
-      color: white;
-      border: none;
-      width: 220px;
-      font-weight: 500;
-      padding: 10px;
-      border-radius: 25px;
-      margin-top: 15px;
-    }
-    .chat-btn:hover {
-      background-color: #1eb157;
-    }
-    .download-link {
-      text-align: center;
-      justify-content: end;
-      margin-top: 50px;
-      font-size: 18rpx;
-    }
-    .download-link a {
-      color: #25d366;
-      text-decoration: none;
-    }
+@media (min-width: 992px) {
+  nav {
+    padding: 16px 8%;
+  }
+  .hero-wrapper {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    padding: 60px 8% 80px;
+  }
+  .hero-content {
+    order: 1;
+  }
+  .hero-poster-box {
+    order: 2;
+  }
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  }
+}
 
-    /* ---------- GREEN DOWNLOAD SECTION ---------- */
-    .download-section {
-      background-color: #25d366;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-    .download-section .btn-download {
-      background-color: white;
-      color: #1eb157;
-      border: none;
-      border-radius: 25px;
-      padding: 10px 30px;
-    }
-    .social-icons i {
-      font-size: 22px;
-      margin: 0 10px;
-      color: white;
-      cursor: pointer;
-      margin-top: 15px;
-    }
-
-    /* ---------- FOOTER ---------- */
-    footer {
-      background-color: #111b21;
-      color: #d1d7db;
-      padding: 40px 15px;
-      font-size: 14px;
-    }
-    footer h6 {
-      color: #ffffff;
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-    footer ul {
-      list-style: none;
-      padding: 0;
-    }
-    footer ul li {
-      margin-bottom: 6px;
-      cursor: pointer;
-    }
-    footer ul li:hover {
-      text-decoration: underline;
-    }
-    footer hr {
-      border-top: 1px solid #2a2f33;
-      margin: 25px 0;
-    }
-    .lang-select {
-      border: 1px solid #3a4145;
-      color: #d1d7db;
-      background: transparent;
-      padding: 5px 15px;
-      border-radius: 25px;
-    }
-  </style>
+/* MOBILE VIEW COMPACT (Below 768px) */
+@media (max-width: 767px) {
+  .nav-links {
+    display: none;
+  }
+  .hero-wrapper {
+    padding-top: 20px;
+  }
+  .hero-poster-box {
+    order: 1; /* Poster Image TOP */
+    margin-bottom: 10px;
+  }
+  .hero-content {
+    order: 2; /* Text below image */
+    text-align: left;
+  }
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-primary, .btn-ghost {
+    width: 100%;
+  }
+}
+</style>
 </head>
+
 <body>
 
-  <!-- Top Bar -->
-  <div class="top-bar">
-    <i class="bi bi-list menu-icon"></i>
-    <div class="center-logo">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="whatsapp logo">
-      <span>WhatsApp</span>
-    </div>
-    <i class="bi bi-download download-icon"></i>
+<!-- NAVBAR -->
+<nav>
+  <div class="brand-logo">
+    <div class="brand-badge"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+    MPL <span>Home</span>
   </div>
 
-  <!-- Profile Section -->
-  <div class="profile-section">
-    <div class="profile-logo">
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#services">Services</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <a href="#" data-wa class="nav-action-btn" target="_blank" rel="noopener">
+    <i class="fa-solid fa-tag"></i> 5% OFF Book
+  </a>
+</nav>
+
+<!-- TOP WELCOME OFFER STRIP -->
+<div class="offer-top-strip">
+  <span class="offer-tag-btn"><i class="fa-solid fa-bolt"></i> Welcome Offer</span>
+  <span><strong>Flat 5% Discount</strong></span>
+</div>
+
+<!-- HERO SECTION -->
+<div class="hero-wrapper">
+
+  <!-- POSTER / HERO IMAGE (Mobile me automatically TOP par order hogi) -->
+  <a href="#" data-wa class="hero-poster-box" target="_blank" rel="noopener" title="Inquire Home Services on WhatsApp">
+    <img src="image.png" alt="MPL Home Service Banner" onerror="this.src='https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80'">
+  </a>
+
+  <!-- HERO CONTENT -->
+  <div class="hero-content">
+    <div class="hero-pill">
+      <i class="fa-solid fa-gift"></i> Flat 5% OFF On 1st Booking
     </div>
-    <h5>Balaji</h5>
-    <a href="https://wa.me/+919243260172?text=Hi%20I%20Want%20Free%20Demo"><button  class="chat-btn">
-      Continue to chat
-    </button></a>
-    <div class="download-link">
-      <p class="mb-0">Don’t have WhatsApp yet?</p> 
-      <a class="mt-0">Download</a>
+    <h1>Complete Solutions for a <span>Better, Safer Home.</span></h1>
+    <p>MPL Home par paayein trusted AC repair, electrical, plumbing, deep cleaning aur painting services direct doorstep par. Claim karein exclusive 5% welcome discount!</p>
+    
+    <div class="hero-highlights">
+      <div class="h-item"><i class="fa-solid fa-circle-check"></i> Trained & Background-Verified Experts</div>
+      <div class="h-item"><i class="fa-solid fa-circle-check"></i> Flat 5% Instant Welcome Discount Included</div>
+      <div class="h-item"><i class="fa-solid fa-circle-check"></i> 100% Fixed & Transparent Rates on WhatsApp</div>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#" data-wa class="btn-primary" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i> Claim 5% OFF & Book
+      </a>
+      <a href="#services" class="btn-ghost">
+        Explore Services
+      </a>
     </div>
   </div>
 
-  <!-- Green Download Section -->
-  <div class="download-section">
-    <button class="btn btn-download fs-5">
-      <i class="bi bi-download "></i> Download
-    </button>
-    <br><hr>
-    <div class="social-icons">
-      <i class="bi bi-twitter"></i>
-      <i class="bi bi-youtube"></i>
-      <i class="bi bi-instagram"></i>
-      <i class="bi bi-facebook"></i>
-    </div>
-    <hr>
+</div>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stat-cell offer-cell">
+    <div class="num">FLAT 5%</div>
+    <div class="lbl">Welcome Discount</div>
+  </div>
+  <div class="stat-cell">
+    <div class="num">30 Min</div>
+    <div class="lbl">Express Arrival</div>
+  </div>
+  <div class="stat-cell">
+    <div class="num">100%</div>
+    <div class="lbl">Verified Experts</div>
+  </div>
+  <div class="stat-cell">
+    <div class="num">30 Days</div>
+    <div class="lbl">Service Warranty</div>
+  </div>
+</div>
+
+<!-- SERVICES GRID -->
+<section class="section" id="services">
+  <div class="section-head">
+    <span>Doorstep Solutions</span>
+    <h2>Our Home Care Services</h2>
+    <p>Har service par 5% welcome offer available hai. Apni required category choose karein.</p>
   </div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-6 col-md-3 mb-4">
-          <h6>What we do</h6>
-          <ul>
-            <li>Features</li>
-            <li>Blog</li>
-            <li>Security</li>
-            <li>For Business</li>
-          </ul>
-        </div>
-        <div class="col-6 col-md-3 mb-4">
-          <h6>Who we are</h6>
-          <ul>
-            <li>About us</li>
-            <li>Careers</li>
-            <li>Brand Center</li>
-            <li>Privacy</li>
-          </ul>
-        </div>
-        <div class="col-6 col-md-3 mb-4">
-          <h6>Use WhatsApp</h6>
-          <ul>
-            <li>Android</li>
-            <li>iPhone</li>
-            <li>Mac/PC</li>
-            <li>WhatsApp Web</li>
-          </ul>
-        </div>
-        <div class="col-6 col-md-3 mb-4">
-          <h6>Need help?</h6>
-          <ul>
-            <li>Contact Us</li>
-            <li>Help Center</li>
-            <li>Apps</li>
-            <li>Security Advisories</li>
-          </ul>
-        </div>
+  <div class="services-grid">
+    <!-- 1. AC & Appliances -->
+    <div class="service-card">
+      <div>
+        <div class="srv-icon-box"><i class="fa-solid fa-snowflake"></i></div>
+        <h3>AC Repair & Maintenance</h3>
+        <p>Complete AC foam jet cleaning, gas refilling, cooling issue resolution, and seasonal maintenance.</p>
+        <ul class="srv-bullets">
+          <li><i class="fa-solid fa-check"></i> Deep coil cleaning & jet wash</li>
+          <li><i class="fa-solid fa-check"></i> Gas leakage check & refill</li>
+          <li><i class="fa-solid fa-check"></i> Uninstallation & shifting</li>
+        </ul>
       </div>
-      <hr />
-      <div class="d-flex justify-content-between align-items-center flex-wrap">
-        <small>© 2026 Balaji — All rights reserved</small>
-        <select class="lang-select mt-2 mt-md-0">
-          <option selected>English</option>
-        </select>
+      <a href="#" data-wa class="srv-cta-link">Book with 5% OFF <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <!-- 2. Electrical Services -->
+    <div class="service-card">
+      <div>
+        <div class="srv-icon-box"><i class="fa-solid fa-bolt"></i></div>
+        <h3>Electrical & Wiring</h3>
+        <p>Short circuits, fan installation, switchboard repair, MCB replacement, and heavy appliance wiring.</p>
+        <ul class="srv-bullets">
+          <li><i class="fa-solid fa-check"></i> Inverter & stabilizer setup</li>
+          <li><i class="fa-solid fa-check"></i> Light fixtures & chandeliers</li>
+          <li><i class="fa-solid fa-check"></i> Complete house rewiring</li>
+        </ul>
+      </div>
+      <a href="#" data-wa class="srv-cta-link">Book with 5% OFF <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <!-- 3. Plumbing Repairs -->
+    <div class="service-card">
+      <div>
+        <div class="srv-icon-box"><i class="fa-solid fa-faucet-drip"></i></div>
+        <h3>Plumbing & Sanitary</h3>
+        <p>Fixing pipe leakages, motor pump installation, tap replacements, and water tank cleaning.</p>
+        <ul class="srv-bullets">
+          <li><i class="fa-solid fa-check"></i> Drain blockage removal</li>
+          <li><i class="fa-solid fa-check"></i> Bathroom fitting upgrades</li>
+          <li><i class="fa-solid fa-check"></i> Water pressure motor repair</li>
+        </ul>
+      </div>
+      <a href="#" data-wa class="srv-cta-link">Book with 5% OFF <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <!-- 4. Deep Cleaning -->
+    <div class="service-card">
+      <div>
+        <div class="srv-icon-box"><i class="fa-solid fa-broom"></i></div>
+        <h3>Home Deep Cleaning</h3>
+        <p>Complete apartment deep cleaning, kitchen degreasing, bathroom scrubbing, and sofa/carpet shampoo.</p>
+        <ul class="srv-bullets">
+          <li><i class="fa-solid fa-check"></i> Eco-friendly chemical cleaning</li>
+          <li><i class="fa-solid fa-check"></i> Balcony & window mesh clean</li>
+          <li><i class="fa-solid fa-check"></i> Move-in / move-out cleaning</li>
+        </ul>
+      </div>
+      <a href="#" data-wa class="srv-cta-link">Book with 5% OFF <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <!-- 5. Painting & Waterproofing -->
+    <div class="service-card">
+      <div>
+        <div class="srv-icon-box"><i class="fa-solid fa-paint-roller"></i></div>
+        <h3>Painting & Waterproofing</h3>
+        <p>Interior & exterior wall painting, dampness treatment, wall putty finishing, and wood polish.</p>
+        <ul class="srv-bullets">
+          <li><i class="fa-solid fa-check"></i> Wall leakage / damp treatment</li>
+          <li><i class="fa-solid fa-check"></i> Texture & accent wall designs</li>
+          <li><i class="fa-solid fa-check"></i> Laser measurement & free quote</li>
+        </ul>
+      </div>
+      <a href="#" data-wa class="srv-cta-link">Book with 5% OFF <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <!-- 6. Appliance Repairs -->
+    <div class="service-card">
+      <div>
+        <div class="srv-icon-box"><i class="fa-solid fa-plug"></i></div>
+        <h3>Appliance Care & Repair</h3>
+        <p>Washing machines, microwave ovens, refrigerators, geysers, and RO water purifier service.</p>
+        <ul class="srv-bullets">
+          <li><i class="fa-solid fa-check"></i> Genuine spare parts replacement</li>
+          <li><i class="fa-solid fa-check"></i> Filter replacements & membrane test</li>
+          <li><i class="fa-solid fa-check"></i> Same-day home inspection</li>
+        </ul>
+      </div>
+      <a href="#" data-wa class="srv-cta-link">Book with 5% OFF <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- WORKFLOW SECTION -->
+<section class="section" id="how-it-works" style="padding-top: 10px;">
+  <div class="section-head">
+    <span>Simple 3-Step Process</span>
+    <h2>How to Book an Expert</h2>
+    <p>Zero hassle. 2 minute me WhatsApp par booking confirm karein.</p>
+  </div>
+
+  <div class="workflow-row">
+    <div class="step-card">
+      <div class="step-num">Step 01</div>
+      <h4>Share Requirement</h4>
+      <p>Apni problem WhatsApp par batayein aur 5% welcome offer claim karein.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">Step 02</div>
+      <h4>Schedule Slot</h4>
+      <p>Technician visit ka exact time aur discounted quote confirm karein.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">Step 03</div>
+      <h4>Doorstep Service</h4>
+      <p>Verified professional service karega sath me 30-day warranty milegi.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM BANNER -->
+<div class="cta-banner">
+  <h2>Ghar Ki Har Problem Par Paayein Flat 5% OFF</h2>
+  <p>Abhi WhatsApp par message karein aur discounted rates ke sath verified professional technician book karein.</p>
+  <a href="#" data-wa class="btn-primary" target="_blank" rel="noopener">
+    <i class="fa-brands fa-whatsapp"></i> Claim 5% Discount on WhatsApp
+  </a>
+</div>
+
+<!-- FOOTER SECTION -->
+<footer id="contact">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="brand-logo" style="margin-bottom: 14px;">
+        <div class="brand-badge"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+        MPL <span>Home</span>
+      </div>
+      <p>Your one-stop reliable partner for all residential repairs, maintenance, and deep cleaning services.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#" data-wa>Book a Technician</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Popular Services</h4>
+      <ul class="footer-links">
+        <li><a href="#" data-wa>AC Repair & Service</a></li>
+        <li><a href="#" data-wa>Plumbing Fixes</a></li>
+        <li><a href="#" data-wa>Electrical Wiring</a></li>
+        <li><a href="#" data-wa>Full Home Cleaning</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact & Support</h4>
+      <div class="footer-contact-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Doorstep Service Available</span>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>Active WhatsApp Desk</span>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fa-solid fa-tag" style="color: #ffb703;"></i>
+        <span style="color: #ffb703;">Flat 5% Welcome Offer Active</span>
       </div>
     </div>
-  </footer>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 MPL Home. All Rights Reserved. Trusted Doorstep Home Care Services.</p>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="#" data-wa class="floating-wa-btn" target="_blank" rel="noopener" aria-label="Contact MPL Home on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- JAVASCRIPT LOGIC -->
+<script>
+  const phoneNumber = ""; 
+  const message = encodeURIComponent("Hello MPL Home! Mujhe home service book karni hai aur 5% Welcome Offer claim karna hai.");
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+
+  document.querySelectorAll("[data-wa]").forEach(function(link) {
+    link.href = whatsappUrl;
+  });
+</script>
 
 </body>
 </html>
